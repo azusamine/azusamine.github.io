@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ラブライブ|μ's</title>
+<link rel="shortcut icon" type="image/x-icon" href="img/us_logo.png" />
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="vendor/parsley.css">
+</head>
+
+<body>
+	<div id="topBtn" title="GoToTop" class="hidden">
+		<img src="img/topBtn.png" alt="" width="50%" >
+		<span class="top_text"></span>
+	</div>
+<div id="wrapper">
+	<header>
+		<nav id="navbar" class="">
+			<div class="nav-wrapper">
+				<!-- Navbar Logo -->
+				<div class="logo">
+				<!-- Logo Placeholder for Inlustration -->
+					<a href="index.html"><img src="img/logo2.png" alt=""></a>
+				</div>
+
+				<!-- Navbar Links -->
+				<ul id="menu">
+					<li><a href="us.html">トップ</a></li>
+					<li><a href="us_news.html">最新情報</a></li>
+					<li><a href="us_members.html">メンバー紹介</a></li>
+					<li><a href="us_cast.html">キャスト＆スタッフ</a></li>
+					<li><a href="us_contact.html">問い合わせ</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- Menu Icon -->
+		<div class="menuIcon">
+			<span class="icon icon-bars"></span>
+			<span class="icon icon-bars overlay"></span>
+		</div>
+
+		<div class="overlay-menu">
+			<ul id="menu2">
+				<li><a href="us.html">トップ</a></li>
+				<li><a href="us_news.html">最新情報</a></li>
+				<li><a href="us_members.html">メンバー紹介</a></li>
+				<li><a href="us_cast.html">キャスト＆スタッフ</a></li>
+				<li><a href="us_contact.html">問い合わせ</a></li>
+			</ul>
+		</div>
+	</header>
+	<main>
+		<section class="home-main">
+			<h2>お問い合わせ</h2>
+			<div class="contact-wrap">
+				<form action="#" data-parsley-validate>
+					<div class="contact-form-row">
+						<div class="contact-form left">
+							<div>
+								<label for="fname">メールアドレス<span>必須</span></label>
+							</div>
+							<div>
+								<input type="text" id="email" name="email" placeholder="" required>
+							</div>
+						</div>
+						<div class="contact-form right">
+							<div>
+								<label for="fname">メールアドレス(確認用)<span>必須</span></label>
+							</div>
+							<div>
+								<input type="text" id="email2" name="email_re" placeholder="" required>
+							</div>
+						</div>
+					</div>
+					<div class="contact-form-row">
+						<div class="contact-form left">
+							<div>
+								<label for="fname">お名前</label>
+							</div>
+							<div>
+								<input type="text" id="name" name="name" placeholder="" required>
+							</div>
+						</div>
+						<div class="contact-form right">
+							<div>
+								<label for="fname">電話番号</label>
+							</div>
+							<div>
+								<input type="text" id="phone" name="phone" placeholder="" required>
+							</div>
+						</div>
+					</div>
+					<div class="contact-form-row">
+						<div>
+							<label for="fname">ご相談内容<span>必須</span></label>
+						</div>
+						<div>
+							<textarea id="subject" name="subject" placeholder="" style="min-height:200px" required></textarea>
+						</div>
+						
+					</div>
+					<div class="contact-form-row">
+						<input type="submit" value="提出" class="submitBtn">
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<hr class="footer_line">
+		<div class="footer_banner">
+			<a href="https://lovelive-as.bushimo.jp/" target="_blank"><img src="img/bnr_as.jpg" alt=""></a>
+			<a href="http://www.lovelive-sifacns.jp/" target="_blank"><img src="img/bnr_sif1.jpg" alt=""></a>
+			<a href="http://www.lovelive-sifacns.jp/" target="_blank"><img src="img/bnr_sif2.jpg" alt=""></a>
+			<a href="http://hibiki-radio.jp/description/llss/detail" target="_blank"><img src="img/bnr_ura-radio.jpg" alt=""></a>
+			<a href="http://www.lovelive-anime.jp/" target="_blank"><img src="img/bnr_ows.jpg" alt=""></a>
+		</div>
+
+		<p class="home-Copyright">
+			<small class="">
+				<span class="home-Copyright-line">©2013 プロジェクトラブライブ！</span>
+				<span class="home-Copyright-line">©2017 プロジェクトラブライブ！サンシャイン!!</span>
+			</small>
+		</p>
+	</footer>
+</div>
+
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="vendor/parsley.js" type="module"></script>
+<script>
+	$(function(){
+		//change navbar css when scroll 
+		$(window).on("scroll", function(){
+			var scroll = $(window).scrollTop();
+			
+			if(scroll > 100){
+				$("#navbar").css({
+					"background": "white",
+					"top": "0",
+					"height" : "70px",
+					"line-height": "5.20",
+					"transition": "top 0.3s linear,height 0.3s linear,line-height 0.3s linear,background 0.3s linear",
+				});
+			}else{
+				$("#navbar").css({
+					"background": "rgba(255,255,255,0.0)",
+					"top": "20px",
+					"height" : "50px",
+					"line-height": "4",
+					"transition": "top 0.3s linear,height 0.3s linear,line-height 0.3s linear,background 0.3s linear",
+				});
+			}
+			
+		});
+		//menu
+		var menuIcon = $(".menuIcon");
+		var nav = $(".overlay-menu");
+		var toggleIcon = $(".menuIcon");
+		
+		menuIcon.on("click", function(){
+			if(nav.hasClass("overlay-toggle")){
+				nav.removeClass("overlay-toggle");
+			}else{
+				nav.addClass("overlay-toggle");
+			}
+		});
+		toggleIcon.on("click", function(){
+			if (!toggleIcon.hasClass("toggle")) {
+				toggleIcon.addClass("toggle");
+			} else {
+				toggleIcon.removeClass("toggle");
+			}
+		});
+		//member menu
+		$('.us_icons_list li').on('click', function() {
+		
+			var memberName = $(this).data('name');
+			
+			
+			
+			for(var i = 0; i < $('.us_members_list li').length; i++){
+				if($('.us_members_list li').eq(i).data('name') === memberName){
+					
+					$('.us_members_list li').eq(i).removeClass("hidden");
+					$('.us_members_list li').eq(i).addClass("active");
+					
+					var yearColor = "#" + $('.us_members_list li').eq(i).data('color');
+					var backgroundColor = "#" + $(this).data('color');
+					$('.members_box_right').css({
+						background: backgroundColor,
+					})
+					$(".profile:first-child").css({
+						border: "solid 3px" + yearColor,
+					})
+
+				}else{
+					$('.us_members_list li').eq(i).removeClass("active");
+					$('.us_members_list li').eq(i).addClass("hidden");
+				}
+			}
+		});
+		// Show the button when user scroll (jquery)
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 20) {
+				$("#topBtn").removeClass("hidden");
+				$("#topBtn").addClass("active");
+				$("#topBtn").stop().animate({
+					opacity: 0.8
+				}, 100);
+			} else {
+				$("#topBtn").removeClass("active");
+				$("#topBtn").stop().animate({
+					opacity: 0
+				}, 100);
+				setTimeout(function(){
+					 $("#topBtn").addClass("hidden");
+				},200);
+			}
+		});
+
+		$('#topBtn').click(function(){
+			$('html,body').animate({
+			  scrollTop: 0
+			}, 'slow');
+		});
+		
+	});
+</script>
+</html>
