@@ -37,7 +37,7 @@ $(function(){
 				});
 			}
 			$("#carousel").swipe({
-				swipeStatus: function(event, phase, direction, distance) {
+				swipe:function(event, phase, direction, distance) {
 					if (phase === "end") {
 						if (direction === "right") {
 							carousel.prev();

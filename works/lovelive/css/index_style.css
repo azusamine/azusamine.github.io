@@ -103,7 +103,7 @@ main{
 
 @media screen and (max-width:767px){
 	#loader{
-		left: calc(50% - (200px));
+		left: calc(50% - (150px));
 	}
 	#loader img{
 		width:80%;
