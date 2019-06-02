@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head><title>sample</title>
+
+<style type="text/css">
+html, body, #openning{ 
+	width:100%; 
+	height:100%; 
+}
+#openning{
+	background-color: #FFF;
+	position: absolute; 
+	top: 0; 
+	left: 0;
+	display: table;
+	opacity: 0;
+	animation: anim2 2s linear;
+}
+
+#openning>div{
+	display: table-cell;
+	width:100%; 
+	height:100%;
+	text-align:center;
+	vertical-align: middle;
+}
+
+#image{
+	font-weight: bold;
+	font-size: 100px;
+	padding: 0px;
+	animation: anim1 1s linear;
+}
+
+@keyframes anim1{
+	from{
+		font-size: 50px; padding: 50px;
+		color: #999;
+	}
+	to{
+		font-size: 100px; padding: 0px;
+		color: black;
+		transform:rotate(360deg);
+	}
+}
+@keyframes anim2{
+	0%{ 
+		opacity: 1;
+	}
+	75%{ 
+		opacity: 0.5;
+	}
+	100%{ 
+		opacity: 0; 
+		z-index: -100;
+	}
+}
+
+#main{ 
+	height:1000px; 
+	background-color: #FFC; 
+}
+	
+</style>
+</head>
+<body>
+
+<div id="openning">
+
+	
+		<!-- 画像をテキストで代替 -->
+		<div id="image">123123</div>
+	
+
+</div>
+
+<div id="main">
+	本文をいろいろと
+</div>
+
+</body>
+</html>
