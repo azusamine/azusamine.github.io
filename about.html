@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="img/logo-b.svg">
+<title>Chris Cheng|Portfolio</title>
+<link rel="stylesheet" href="vendor/swiper.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/burger_menu.css">
+</head>
+<body id="particles-js">
+    <div class="wrapper">
+        <nav class="header">
+			<div class="navbar">
+				<div class="logo_container">
+					<a href="index.html"><img class="logo" src="img/logo-w.png" alt=""></a>
+				</div>
+				<div class="menuIcon_container">
+					<div class="menuIcon_bg">
+						<div class="menuIcon">
+							<span class="icon icon-bars"></span>
+							<span class="icon icon-bars overlay"></span>
+						</div>
+					</div>
+					<div class="overlayMenu_container">
+						<ul class="overlayMenu">
+							<li class="overlayMenu_item"><a href="index.html">Top</a></li>
+							<li class="overlayMenu_item"><a href="about.html">About</a></li>
+							<li class="overlayMenu_item"><a href="works.html">Works</a></li>
+							<li class="overlayMenu_item"><a href="mailto:chengtszfungchris@gmail.com">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+        <main class="main">
+			<div class="container_general">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="swiper-slide_profileBox">
+								<h1>About Me</h1>
+								<h2>Cheng Tsz Fung Chris</h2>
+								<h2>鄭梓峰</h2>
+								<p>1994年香港に生まれ、現在日本工学院専門学校でWeb制作/デザインなどを勉強しています。
+								今後、フロントエンドエンジニア/Webデザイナーとして活躍していきたいと思います。
+								</p>
+								<p>My name is Chris, 25 years old. Born and raised in Hong Kong. I am currently studying at Nippon Engineering College as a Web Desinger/Frontend Engineer.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-scrollbar"></div>
+				</div>
+			</div>
+        </main>
+        <footer class="footer">
+			<p class="footer_text"> @Chris Cheng</p>
+		</footer>
+    </div>
+<script src="vendor/jquery-3.4.1.min.js"></script>
+<script src="vendor/swiper.min.js"></script>
+<script src="vendor/particles.min.js"></script>
+<script src="vendor/app.js"></script>
+<script>
+    $(function(){
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            speed: 400,
+            spaceBetween: 100,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            slideToClickedSlide: true,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 1,
+                depth: 10,
+                modifier: 1.5,
+                slideShadows : false,
+            },
+            pagination: {
+             el: '.swiper-pagination',
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: true,
+                draggable: true,
+            },
+            keyboard: {
+                enabled: true,
+            },
+            mousewheel: false,
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is <= 640px
+                640: {
+					slidesPerView: 1,
+					spaceBetween: 30
+                },
+				1000: {
+					slidesPerView: 1,
+					spaceBetween: 30
+				}
+            }
+        });
+		//menu
+		var menuIcon = $(".menuIcon");
+		var nav = $(".overlayMenu_container");
+		var toggleIcon = $(".menuIcon");
+		var overlayMenu = $(".overlayMenu_container");
+
+		menuIcon.on("click", function(){
+			overlayMenu.css("transition", "transform 0.5s ease-out");
+			if(nav.hasClass("overlay-toggle")){
+				nav.removeClass("overlay-toggle");
+			}else{
+				nav.addClass("overlay-toggle");
+			}
+		});
+		toggleIcon.on("click", function(){
+			overlayMenu.css("transition", "transform 0.5s ease-out");
+			if (!toggleIcon.hasClass("toggle")) {
+				toggleIcon.addClass("toggle");
+			} else {
+				toggleIcon.removeClass("toggle");
+			}
+		});
+    });
+</script>
+</body>
+</html>
