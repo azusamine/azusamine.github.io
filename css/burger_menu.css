@@ -154,24 +154,27 @@
   .overlayMenu_container .overlayMenu {
     display: block;
     position: relative; }
-  .overlayMenu_container .overlayMenu_item {
-    display: block;
-    position: relative; }
-    .overlayMenu_container .overlayMenu_item a {
+    .overlayMenu_container .overlayMenu .overlayMenu_item {
       display: block;
-      font-size: 1.8em;
-      color: white;
-      text-shadow: 2px 2px 2px black;
-      letter-spacing: 4px;
-      padding: 10px 0;
-      text-align: center;
-      -webkit-transition: color 0.3s ease;
-      transition: color 0.3s ease;
-      text-decoration: none; }
-      .overlayMenu_container .overlayMenu_item a:hover, .overlayMenu_container .overlayMenu_item a:active {
-        color: #1c79b8;
+      position: relative;
+      opacity: 0; }
+      .overlayMenu_container .overlayMenu .overlayMenu_item a {
+        display: block;
+        font-size: 1.8em;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        letter-spacing: 4px;
+        padding: 10px 0;
+        text-align: center;
         -webkit-transition: color 0.3s ease;
-        transition: color 0.3s ease; }
+        transition: color 0.3s ease;
+        text-decoration: none; }
+        .overlayMenu_container .overlayMenu .overlayMenu_item a:hover, .overlayMenu_container .overlayMenu .overlayMenu_item a:active {
+          color: #1c79b8;
+          -webkit-transition: color 0.3s ease;
+          transition: color 0.3s ease; }
+  .overlayMenu_container .delay {
+    animation-delay: 0.14s; }
 
 .overlay-toggle {
   transform: translateY(-12%);

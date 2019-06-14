@@ -6,14 +6,19 @@
 <link rel="icon" href="img/logo-b.svg">
 <title>Chris Cheng|Portfolio</title>
 <link rel="stylesheet" href="vendor/swiper.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/burger_menu.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+	body {
+		height: auto;
+		overflow: auto;
+		overflow-x: hidden;
+	}
+</style>
 </head>
 <body id="particles-js">
-	<div id="topBtn" title="GoToTop" class="hidden">
-		<img src="img/topBtn.png" alt="" width="50%" >
-		<span class="top_text"></span>
-	</div>
+	<div id="topBtn"><a href="#"></a></div>
     <div class="wrapper">
         <nav class="header">
 			<div class="navbar">
@@ -66,49 +71,33 @@
     $(function(){
 		//menu
 		var menuIcon = $(".menuIcon");
-		var nav = $(".overlayMenu_container");
 		var toggleIcon = $(".menuIcon");
-		var overlayMenu = $(".overlayMenu_container");
+		var overlayMenuC = $(".overlayMenu_container");
+		var overlayItem = $(".overlayMenu_item");
 
 		menuIcon.on("click", function(){
-			overlayMenu.css("transition", "transform 0.5s ease-out");
-			if(nav.hasClass("overlay-toggle")){
-				nav.removeClass("overlay-toggle");
+			overlayMenuC.css("transition", "transform 0.5s ease-out");
+			if(overlayMenuC.hasClass("overlay-toggle")){
+				overlayMenuC.removeClass("overlay-toggle");
+				overlayItem.removeClass("animated fadeInLeftBig fast delay");
 			}else{
-				nav.addClass("overlay-toggle");
+				overlayMenuC.addClass("overlay-toggle");
+				overlayItem.addClass("animated fadeInLeftBig fast delay");
 			}
 		});
 		toggleIcon.on("click", function(){
-			overlayMenu.css("transition", "transform 0.5s ease-out");
+			overlayMenuC.css("transition", "transform 0.5s ease-out");
 			if (!toggleIcon.hasClass("toggle")) {
 				toggleIcon.addClass("toggle");
 			} else {
 				toggleIcon.removeClass("toggle");
 			}
 		});
-		// Show the button when user scroll (jquery)
-		$(window).scroll(function() {
-			if ($(this).scrollTop() > 20) {
-				$("#topBtn").removeClass("hidden");
-				$("#topBtn").addClass("active");
-				$("#topBtn").stop().animate({
-					opacity: 0.8
-				}, 100);
-			} else {
-				$("#topBtn").removeClass("active");
-				$("#topBtn").stop().animate({
-					opacity: 0
-				}, 100);
-				setTimeout(function(){
-					 $("#topBtn").addClass("hidden");
-				},200);
-			}
-		});
-
-		$('#topBtn').click(function(){
-			$('html,body').animate({
-			  scrollTop: 0
-			}, 'slow');
+		
+		var pagetop = $("#topBtn");
+		pagetop.click(function() {
+			$("body, html").animate({ scrollTop: 0 }, 500);
+			return false;
 		});
     });
 </script>

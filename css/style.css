@@ -30,26 +30,28 @@ canvas {
   background-color: #1f1f1f;
   z-index: -1; }
 
-.gradDynamic {
-  position: relative; }
-
-.gradDynamic:after, .gradDynamic:before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  content: "";
-  z-index: -1; }
-
-.gradDynamic:after {
-  background: radial-gradient(circle, red, transparent);
-  background-size: 600%;
-  animation: colorSpin 20s linear infinite; }
-
-.gradDynamic:before {
-  background-color: #1f1f1f; }
-
+/*
+.gradDynamic{
+	position: relative;
+}
+.gradDynamic:after, .gradDynamic:before{
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	content:"";
+	z-index:-1;
+}
+.gradDynamic:after{
+	background: radial-gradient(circle,red,transparent);
+	background-size: 600%;
+	animation: colorSpin 20s linear infinite;
+}
+.gradDynamic:before{
+	background-color: #1f1f1f;
+}
+*/
 @keyframes colorSpin {
   25% {
     background-position: 0 100%; }
@@ -169,7 +171,7 @@ canvas {
 
 /* profile */
 .container_general {
-  margin: 30px auto; }
+  margin: 30px 10px; }
   .container_general .swiper-container {
     width: 100%;
     padding: 20px 0 150px; }
@@ -201,7 +203,8 @@ canvas {
           display: table;
           border: 1px solid white;
           cursor: pointer;
-          transition: background 0.5s ease-in-out; }
+          transition: background 0.5s ease-in-out;
+          animation-delay: 1.5s; }
           .container_general .swiper-container .swiper-slide .swiper-slide_menuBox ul li a {
             display: table-cell;
             text-align: center;
@@ -229,7 +232,7 @@ canvas {
         .container_general .swiper-container .swiper-slide .swiper-slide_profileBox p {
           line-height: 2;
           width: 450px;
-          text-align: justify;
+          text-align: left;
           margin: 20px auto; }
       .container_general .swiper-container .swiper-slide .swiper-slide_contactBox {
         margin: 20px;
@@ -238,7 +241,7 @@ canvas {
 
 /* works */
 .container_works {
-  margin: 30px auto;
+  margin: 30px 10px;
   /* Slider css overwrite*/ }
   .container_works .swiper-container {
     width: 100%;
@@ -290,49 +293,65 @@ canvas {
     .container_works .works img {
       width: 100%; }
 
-/* top button*/
-.active {
-  display: block;
-  animation-name: fadeIn;
-  animation-duration: 0.5s; }
-
-.hidden {
-  display: none;
-  animation-name: fadeOut;
-  animation-duration: 0.5s; }
-
-@keyframes fadeIn {
+/* arrow animation*/
+.arrow_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .arrow_container .arrow {
+    width: 20px;
+    height: 20px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: rotate(-45deg);
+    animation: move 1.3s infinite;
+    margin: -3px; }
+  .arrow_container .arrow:nth-child(2) {
+    animation-delay: 0.15s; }
+  .arrow_container .arrow:nth-child(3) {
+    animation-delay: 0.3s; }
+@keyframes move {
   0% {
     opacity: 0; }
-  100% {
-    opacity: 1; } }
-@keyframes fadeOut {
-  0% {
+  50% {
     opacity: 1; }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+    transform: translateX(20px) rotate(-45deg); } }
+/* top button*/
 #topBtn {
+  width: 75px;
+  height: 50px;
   position: fixed;
-  /* Fixed/sticky position */
-  bottom: 20px;
-  /* Place the button at the bottom of the page */
-  right: 20px;
-  z-index: 100;
-  /* Make sure it does not overlap */
-  color: black;
-  /* Text color */
-  cursor: pointer;
-  /* Add a mouse pointer on hover */
-  padding: 15px;
-  /* Some padding */
-  text-align: right;
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out; }
-
-#topBtn:hover {
-  color: white;
-  /* Text color */
-  opacity: 0.5; }
+  right: -30px;
+  bottom: 10px;
+  border: 1px solid #C9C9C9;
+  opacity: 0.6;
+  transition: right 0.2s ease-in-out;
+  background: #1f1f1f; }
+  #topBtn a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none; }
+    #topBtn a:before {
+      font-family: "Font Awesome 5 Free";
+      content: 'Top';
+      font-size: 25px;
+      color: #fff;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      text-align: center; }
+  #topBtn:hover {
+    right: -5px; }
 
 /* Footer css rgba(100, 150, 200, 0.5) */
 .footer {
@@ -350,7 +369,13 @@ canvas {
     .container_general .swiper-container .swiper-slide .swiper-slide_profileBox p {
       width: 80vw; }
 
-  .container_works .swiper-container {
-    padding: 10px 0; }
-    .container_works .swiper-container .swiper-slide .slide__img {
-      opacity: 1 !important; } }
+  .container_works {
+    margin: 20px 10px; }
+    .container_works .swiper-container {
+      padding: 10px 0; }
+      .container_works .swiper-container .swiper-slide .slide__img {
+        opacity: 1 !important; }
+      .container_works .swiper-container .swiper-slide .slide__text {
+        height: 400px;
+        display: flex;
+        font-size: 5rem; } }

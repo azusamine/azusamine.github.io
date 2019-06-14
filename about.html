@@ -108,20 +108,22 @@
         });
 		//menu
 		var menuIcon = $(".menuIcon");
-		var nav = $(".overlayMenu_container");
 		var toggleIcon = $(".menuIcon");
-		var overlayMenu = $(".overlayMenu_container");
+		var overlayMenuC = $(".overlayMenu_container");
+		var overlayItem = $(".overlayMenu_item");
 
 		menuIcon.on("click", function(){
-			overlayMenu.css("transition", "transform 0.5s ease-out");
-			if(nav.hasClass("overlay-toggle")){
-				nav.removeClass("overlay-toggle");
+			overlayMenuC.css("transition", "transform 0.5s ease-out");
+			if(overlayMenuC.hasClass("overlay-toggle")){
+				overlayMenuC.removeClass("overlay-toggle");
+				overlayItem.removeClass("animated fadeInLeftBig fast delay");
 			}else{
-				nav.addClass("overlay-toggle");
+				overlayMenuC.addClass("overlay-toggle");
+				overlayItem.addClass("animated fadeInLeftBig fast delay");
 			}
 		});
 		toggleIcon.on("click", function(){
-			overlayMenu.css("transition", "transform 0.5s ease-out");
+			overlayMenuC.css("transition", "transform 0.5s ease-out");
 			if (!toggleIcon.hasClass("toggle")) {
 				toggleIcon.addClass("toggle");
 			} else {
