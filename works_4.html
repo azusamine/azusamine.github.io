@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="img/logo-b.svg">
+<title>Chris Cheng|Portfolio</title>
+<link rel="stylesheet" href="vendor/swiper.min.css">
+<link rel="stylesheet" href="css/burger_menu.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<style>
+	body {
+		height: auto;
+		overflow: auto;
+		overflow-x: hidden;
+	}
+</style>
+</head>
+<body id="particles-js">
+	<div id="topBtn"><a href="#"></a></div>
+    <div class="wrapper">
+        <nav class="header">
+			<div class="navbar">
+				<div class="logo_container">
+					<a href="index.html"><img class="logo" src="img/logo-w.png" alt=""></a>
+				</div>
+				<div class="menuIcon_container">
+					<div class="menuIcon_bg">
+						<div class="menuIcon">
+							<span class="icon icon-bars"></span>
+							<span class="icon icon-bars overlay"></span>
+						</div>
+					</div>
+					<div class="overlayMenu_container">
+						<ul class="overlayMenu">
+							<li class="overlayMenu_item"><a href="index.html">Top</a></li>
+							<li class="overlayMenu_item"><a href="about.html">About</a></li>
+							<li class="overlayMenu_item"><a href="works.html">Works</a></li>
+							<li class="overlayMenu_item"><a href="mailto:chengtszfungchris@gmail.com">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+        <main class="main">
+			<div class="container_works">
+				<div class="works">
+					<h1>獺祭ECサイト</h1>
+					<p>獺祭のWeb Storeサイトをリニューアルして、日本酒の高級感を意識して、おちついた雰囲気を演出しました。
+					</p>
+					<img src="img/ec01.jpg" alt="">
+					<img src="img/ec02.jpg" alt="">
+					<img src="img/ec03.jpg" alt="">
+				</div>
+			</div>
+        </main>
+        <footer class="footer">
+			<p class="footer_text"> @Chris Cheng</p>
+		</footer>
+    </div>
+<script src="vendor/jquery-3.4.1.min.js"></script>
+<script src="vendor/particles.min.js"></script>
+<script src="vendor/app.js"></script>
+<script>
+    $(function(){
+		//menu
+		var menuIcon = $(".menuIcon");
+		var toggleIcon = $(".menuIcon");
+		var overlayMenuC = $(".overlayMenu_container");
+		var overlayItem = $(".overlayMenu_item");
+
+		menuIcon.on("click", function(){
+			overlayMenuC.css("transition", "transform 0.5s ease-out");
+			if(overlayMenuC.hasClass("overlay-toggle")){
+				overlayMenuC.removeClass("overlay-toggle");
+				overlayItem.removeClass("animated fadeInLeftBig fast delay");
+			}else{
+				overlayMenuC.addClass("overlay-toggle");
+				overlayItem.addClass("animated fadeInLeftBig fast delay");
+			}
+		});
+		toggleIcon.on("click", function(){
+			overlayMenuC.css("transition", "transform 0.5s ease-out");
+			if (!toggleIcon.hasClass("toggle")) {
+				toggleIcon.addClass("toggle");
+			} else {
+				toggleIcon.removeClass("toggle");
+			}
+		});
+		
+		var pagetop = $("#topBtn");
+		pagetop.click(function() {
+			$("body, html").animate({ scrollTop: 0 }, 500);
+			return false;
+		});
+    });
+</script>
+</body>
+</html>
