@@ -230,7 +230,7 @@
 .overlayMenu_container .overlayMenu .overlayMenu_item {
   display: block;
   position: relative;
-  opacity: 0;
+  opacity: 1;
 }
 
 .overlayMenu_container .overlayMenu .overlayMenu_item a {
