@@ -667,6 +667,14 @@ canvas {
   opacity: 1;
 }
 
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
 /* Footer css rgba(100, 150, 200, 0.5) */
 .footer {
   -webkit-box-flex: 0;
