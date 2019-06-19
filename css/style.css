@@ -471,7 +471,11 @@ canvas {
 
 .container_works .works h2 {
   margin: 20px auto;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.container_works .works h2 img {
+  width: 25px;
 }
 
 .container_works .works p {
