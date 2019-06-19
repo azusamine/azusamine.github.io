@@ -48,7 +48,6 @@ canvas {
   height: 100%;
   top: 0;
   left: 0;
-  vertical-align: bottom;
   background-color: #1f1f1f;
   z-index: -1;
 }
@@ -130,7 +129,7 @@ canvas {
 }
 
 .loading__img svg path {
-  storke: #fff;
+  stroke: #fff;
   fill: #FFF;
   stroke-dasharray: 4200;
   opacity: 1;
@@ -484,7 +483,7 @@ canvas {
 }
 
 .container_works .works .detailBtn {
-  margin: 10px auto;
+  margin: 20px auto;
   text-align: center;
 }
 
@@ -497,9 +496,8 @@ canvas {
   padding: 10px 20px;
   text-decoration: none;
   color: aliceblue;
-  -webkit-box-shadow: inset 0 0 0 2px #f45e61;
-          box-shadow: inset 0 0 0 2px #f45e61;
-  color: #f45e61;
+  -webkit-box-shadow: inset 0 0 0 2px aliceblue;
+          box-shadow: inset 0 0 0 2px aliceblue;
   font-size: inherit;
   font-weight: 700;
   position: relative;
@@ -537,7 +535,7 @@ canvas {
 }
 
 .container_works .works .detailBtn .draw:hover {
-  color: white;
+  color: #1c79b8;
 }
 
 .container_works .works .detailBtn .draw:hover::before, .container_works .works .detailBtn .draw:hover::after {
@@ -546,15 +544,15 @@ canvas {
 }
 
 .container_works .works .detailBtn .draw:hover::before {
-  border-top-color: white;
-  border-right-color: white;
+  border-top-color: #1c79b8;
+  border-right-color: #1c79b8;
   -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
   transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
 }
 
 .container_works .works .detailBtn .draw:hover::after {
-  border-bottom-color: white;
-  border-left-color: white;
+  border-bottom-color: #1c79b8;
+  border-left-color: #1c79b8;
   -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
   transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
 }
@@ -635,8 +633,8 @@ canvas {
   bottom: 10px;
   border: 1px solid #C9C9C9;
   opacity: 0.6;
-  -webkit-transition: right 0.2s ease-in-out;
-  transition: right 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   background: #1f1f1f;
 }
 
@@ -666,6 +664,7 @@ canvas {
 
 #topBtn:hover {
   right: -5px;
+  opacity: 1;
 }
 
 /* Footer css rgba(100, 150, 200, 0.5) */

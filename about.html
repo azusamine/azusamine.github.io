@@ -65,73 +65,8 @@
 <script src="vendor/swiper.min.js"></script>
 <script src="vendor/particles.min.js"></script>
 <script src="vendor/app.js"></script>
-<script>
-    $(function(){
-        var swiper = new Swiper('.swiper-container', {
-            effect: 'coverflow',
-            grabCursor: true,
-            speed: 400,
-            spaceBetween: 100,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            slideToClickedSlide: true,
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 1,
-                depth: 10,
-                modifier: 1.5,
-                slideShadows : false,
-            },
-            pagination: {
-             el: '.swiper-pagination',
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar',
-                hide: true,
-                draggable: true,
-            },
-            keyboard: {
-                enabled: true,
-            },
-            mousewheel: false,
-            // Responsive breakpoints
-            breakpoints: {
-                // when window width is <= 640px
-                640: {
-					slidesPerView: 1,
-					spaceBetween: 30
-                },
-				1000: {
-					slidesPerView: 1,
-					spaceBetween: 30
-				}
-            }
-        });
-		//menu
-		var menuIcon = $(".menuIcon");
-		var toggleIcon = $(".menuIcon");
-		var overlayMenuC = $(".overlayMenu_container");
-		var overlayItem = $(".overlayMenu_item");
-
-		menuIcon.on("click", function(){
-			overlayMenuC.css("transition", "transform 0.5s ease-out");
-			if(overlayMenuC.hasClass("overlay-toggle")){
-				overlayMenuC.removeClass("overlay-toggle");
-				overlayItem.removeClass("animated fadeInLeftBig fast delay");
-			}else{
-				overlayMenuC.addClass("overlay-toggle");
-				overlayItem.addClass("animated fadeInLeftBig fast delay");
-			}
-		});
-		toggleIcon.on("click", function(){
-			overlayMenuC.css("transition", "transform 0.5s ease-out");
-			if (!toggleIcon.hasClass("toggle")) {
-				toggleIcon.addClass("toggle");
-			} else {
-				toggleIcon.removeClass("toggle");
-			}
-		});
-    });
-</script>
+<!--own js-->
+<script src="js/swiper-config.js"></script>
+<script src="js/menu.js"></script>
 </body>
 </html>

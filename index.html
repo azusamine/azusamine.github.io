@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="img/logo-b.svg">
+<link rel='shortcut icon' type='image/x-icon' href="img/logo-b.svg">
 <title>Chris Cheng|Portfolio</title>
 <link rel="stylesheet" href="vendor/swiper.min.css">
 <link rel="stylesheet" href="css/style.css">
@@ -153,70 +153,6 @@
     $(function(){
 		//loading screen
 		loadScreen();
-        var swiper = new Swiper('.swiper-container', {
-            effect: 'coverflow',
-            grabCursor: true,
-            speed: 400,
-            spaceBetween: 100,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            slideToClickedSlide: true,
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 1,
-                depth: 10,
-                modifier: 1.5,
-                slideShadows : false,
-            },
-            pagination: {
-             el: '.swiper-pagination',
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar',
-                hide: true,
-                draggable: true,
-            },
-            keyboard: {
-                enabled: true,
-            },
-            mousewheel: false,
-            // Responsive breakpoints
-            breakpoints: {
-                // when window width is <= 640px
-                640: {
-					slidesPerView: 1,
-					spaceBetween: 30
-                },
-				1000: {
-					slidesPerView: 1,
-					spaceBetween: 30
-				}
-            }
-        });
-		//menu
-		var menuIcon = $(".menuIcon");
-		var toggleIcon = $(".menuIcon");
-		var overlayMenuC = $(".overlayMenu_container");
-		var overlayItem = $(".overlayMenu_item");
-
-		menuIcon.on("click", function(){
-			overlayMenuC.css("transition", "transform 0.5s ease-out");
-			if(overlayMenuC.hasClass("overlay-toggle")){
-				overlayMenuC.removeClass("overlay-toggle");
-				overlayItem.removeClass("animated fadeInLeftBig fast delay");
-			}else{
-				overlayMenuC.addClass("overlay-toggle");
-				overlayItem.addClass("animated fadeInLeftBig fast delay");
-			}
-		});
-		toggleIcon.on("click", function(){
-			overlayMenuC.css("transition", "transform 0.5s ease-out");
-			if (!toggleIcon.hasClass("toggle")) {
-				toggleIcon.addClass("toggle");
-			} else {
-				toggleIcon.removeClass("toggle");
-			}
-		});
     });
 	function loadScreen(){
 		var loading = $(".loading");
@@ -226,5 +162,8 @@
 		setTimeout(isHidden,1500);
 	};
 </script>
+<!--own js-->
+<script src="js/swiper-config.js"></script>
+<script src="js/menu.js"></script>
 </body>
 </html>
