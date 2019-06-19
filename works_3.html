@@ -18,7 +18,7 @@
 </style>
 </head>
 <body id="particles-js">
-	<div id="topBtn"><a href="#"></a></div>
+	<div id="topBtn" class="hidden"><a href="#"></a></div>
     <div class="wrapper">
         <nav class="header">
 			<div class="navbar">
@@ -67,15 +67,7 @@
 <script src="vendor/particles.min.js"></script>
 <script src="vendor/app.js"></script>
 <!--own js-->
-<script>
-	$(function(){		
-		var pagetop = $("#topBtn");
-		pagetop.click(function() {
-			$("body, html").animate({ scrollTop: 0 }, 500);
-			return false;
-		});
-	});
-</script>
+<script src="js/top-btn.js"></script>
 <script src="js/menu.js"></script>
 </body>
 </html>
