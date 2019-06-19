@@ -462,6 +462,28 @@ canvas {
      border-image: linear-gradient(to bottom, #666, rgba(0, 0, 0, 0)) 1 100%;
 }
 
+.container_works .works .pageNav {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container_works .works .pageNav li {
+  padding: 0 5px;
+}
+
+.container_works .works .pageNav li a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.container_works .works .pageNav li a:hover, .container_works .works .pageNav li a:active {
+  color: #1c79b8;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
 .container_works .works h1 {
   margin: 40px auto;
   font-size: 2rem;
