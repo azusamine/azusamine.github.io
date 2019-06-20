@@ -740,5 +740,8 @@ canvas {
     font-size: 5rem;
     margin-top: -100px;
   }
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

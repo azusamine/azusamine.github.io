@@ -14,6 +14,10 @@ $(function(){
             modifier: 1.5,
             slideShadows : false,
         },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         pagination: {
          el: '.swiper-pagination',
         },
@@ -31,11 +35,11 @@ $(function(){
             // when window width is <= 640px
             640: {
                 slidesPerView: 1,
-                spaceBetween: 30
+                spaceBetween: 30,
             },
-            1000: {
-                slidesPerView: 1,
-                spaceBetween: 30
+            1280: {
+                slidesPerView: 2,
+                spaceBetween: 40
             }
         }
     });
