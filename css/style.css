@@ -896,6 +896,9 @@ canvas {
 }
 
 @media screen and (max-width: 420px) {
+  .cursor {
+    display: none;
+  }
   .container_general .swiper-container .swiper-slide {
     height: 860px;
   }
