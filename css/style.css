@@ -372,8 +372,12 @@ canvas {
 }
 
 .container_general .swiper-container .swiper-slide .swiper-slide_profileBox h2 {
-  margin: 20px auto;
+  margin: 10px auto;
   font-size: 1.5rem;
+}
+
+.container_general .swiper-container .swiper-slide .swiper-slide_profileBox h4 {
+  margin-top: -10px;
 }
 
 .container_general .swiper-container .swiper-slide .swiper-slide_profileBox p {
@@ -381,6 +385,47 @@ canvas {
   width: 450px;
   text-align: left;
   margin: 20px auto;
+}
+
+.container_general .swiper-container .swiper-slide .swiper-slide_profileBox .profileBox_hrText {
+  margin: 0 auto;
+  width: 85%;
+  line-height: 1;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: aliceblue;
+  text-align: center;
+  height: 1.2rem;
+  opacity: 1;
+}
+
+.container_general .swiper-container .swiper-slide .swiper-slide_profileBox .profileBox_hrText:before {
+  content: "";
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(red), to(transparent));
+  background: linear-gradient(to right, transparent, red, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+}
+
+.container_general .swiper-container .swiper-slide .swiper-slide_profileBox .profileBox_hrText:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  color: aliceblue;
+  line-height: 1.2rem;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.container_general .swiper-container .swiper-slide .swiper-slide_profileBox .profileBox_skills {
+  text-align: center;
+}
+
+.container_general .swiper-container .swiper-slide .swiper-slide_profileBox .profileBox_skills img {
+  width: 20px;
 }
 
 .container_general .swiper-container .swiper-slide .swiper-slide_contactBox {
@@ -583,6 +628,32 @@ canvas {
   transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
 }
 
+.container_works .works .pageNav_arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container_works .works .pageNav_arrows .pageNav_arrows-left a, .container_works .works .pageNav_arrows .pageNav_arrows-right a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.container_works .works .pageNav_arrows .pageNav_arrows-left a:hover, .container_works .works .pageNav_arrows .pageNav_arrows-right a:hover {
+  color: #1c79b8;
+}
+
+.container_works .works .pageNav_arrows .pageNav_arrows-left {
+  margin: 20px 5vw;
+}
+
+.container_works .works .pageNav_arrows .pageNav_arrows-right {
+  margin: 20px 5vw;
+}
+
 /* arrow animation*/
 .arrow_container {
   display: -webkit-box;
@@ -718,7 +789,7 @@ canvas {
 
 @media screen and (max-width: 420px) {
   .container_general .swiper-container .swiper-slide {
-    height: 800px;
+    height: 860px;
   }
   .container_general .swiper-container .swiper-slide .swiper-slide_profileBox p {
     width: 80vw;
