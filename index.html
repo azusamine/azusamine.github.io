@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 <body id="particles-js">
+	<div class="cursor"></div>
     <div class="wrapper">
         <nav class="header">
 			<div class="navbar">
@@ -208,5 +209,25 @@
 </script>
 <!--own js-->
 <script src="js/menu.js"></script>
+<script>
+	//pure js no jquery
+	const cursor = document.querySelector(".cursor");
+
+	document.addEventListener("mousemove", e => {
+	cursor.setAttribute(
+		"style",
+		"top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+	);
+	});
+
+	document.addEventListener("click", () => {
+	cursor.classList.add("expand");
+
+	setTimeout(() => {
+		cursor.classList.remove("expand");
+	}, 500);
+	});
+
+</script>
 </body>
 </html>

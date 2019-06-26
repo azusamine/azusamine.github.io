@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  cursor: url("../img/mouse.png") 6.5 6, auto;
 }
 
 body {
@@ -14,6 +15,115 @@ body {
   -webkit-animation: LoadTransition 0.75s;
           animation: LoadTransition 0.75s;
   overflow: hidden;
+}
+
+body .cursor {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #1c79b8;
+  position: absolute;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-animation: cursorAnim 1s infinite alternate;
+          animation: cursorAnim 1s infinite alternate;
+  pointer-events: none;
+}
+
+body .cursor::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border: 5px solid gray;
+  opacity: .5;
+  top: -12px;
+  left: -12px;
+  -webkit-animation: cursorAnim2 1s infinite alternate;
+          animation: cursorAnim2 1s infinite alternate;
+}
+
+@-webkit-keyframes cursorAnim {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@keyframes cursorAnim {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@-webkit-keyframes cursorAnim2 {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+
+@keyframes cursorAnim2 {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+
+@-webkit-keyframes cursorAnim3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(3);
+            transform: scale(3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes cursorAnim3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(3);
+            transform: scale(3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+}
+
+body .expand {
+  -webkit-animation: cursorAnim3 .5s forwards;
+          animation: cursorAnim3 .5s forwards;
+  border: 1px solid red;
 }
 
 @-webkit-keyframes LoadTransition {
@@ -119,8 +229,8 @@ canvas {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
 .loading__img svg {
@@ -140,7 +250,7 @@ canvas {
 @-webkit-keyframes animate {
   0% {
     opacity: 0;
-    fill: none;
+    -webkit-fill: none;
     stroke-dasharray: 4200;
   }
   30% {
@@ -160,7 +270,7 @@ canvas {
 @keyframes animate {
   0% {
     opacity: 0;
-    fill: none;
+    -webkit-fill: none;
     stroke-dasharray: 4200;
   }
   30% {
@@ -206,7 +316,6 @@ canvas {
 
 .header .logo_container .logo {
   width: 30px;
-  cursor: pointer;
 }
 
 /*navbar css start*/
@@ -236,7 +345,7 @@ canvas {
   padding: 10px 10px 10px 30px;
   text-decoration: none;
   font-size: 16px;
-  color: #ccc;
+  color: #C9C9C9;
   display: block;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -256,7 +365,7 @@ canvas {
 }
 
 .isDisabled {
-  color: #ccc !important;
+  color: #C9C9C9 !important;
   cursor: not-allowed;
   text-decoration: none;
   font-size: 22px !important;
@@ -330,7 +439,6 @@ canvas {
   height: 150px;
   display: table;
   border: 1px solid white;
-  cursor: pointer;
   -webkit-transition: background 0.5s ease-in-out;
   transition: background 0.5s ease-in-out;
   -webkit-animation-delay: 1.5s;
@@ -502,9 +610,9 @@ canvas {
   overflow: auto;
   border-width: 2px;
   border-style: solid;
-  -o-border-image: linear-gradient(to bottom, #666, rgba(0, 0, 0, 0)) 1 100%;
-     border-image: -webkit-gradient(linear, left top, left bottom, from(#666), to(rgba(0, 0, 0, 0))) 1 100%;
-     border-image: linear-gradient(to bottom, #666, rgba(0, 0, 0, 0)) 1 100%;
+  -o-border-image: linear-gradient(to bottom, #C9C9C9, rgba(0, 0, 0, 0)) 1 100%;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#C9C9C9), to(rgba(0, 0, 0, 0))) 1 100%;
+     border-image: linear-gradient(to bottom, #C9C9C9, rgba(0, 0, 0, 0)) 1 100%;
 }
 
 .container_works .works .pageNav {
