@@ -764,9 +764,7 @@ canvas {
 
 /* arrow animation*/
 .arrow_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -899,6 +897,11 @@ canvas {
   .cursor {
     display: none;
   }
+  .arrow_containerP {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .container_general .swiper-container .swiper-slide {
     height: 860px;
   }
@@ -924,6 +927,17 @@ canvas {
   }
   .swiper-button-next, .swiper-button-prev {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+  .arrow_containerP {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 /*# sourceMappingURL=style.css.map */
