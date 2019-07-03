@@ -985,6 +985,17 @@ canvas {
   .container_general .swiper-container .swiper-slide .swiper-slide_profileBox p {
     width: 80vw;
   }
+  .container_general .profileBox {
+    display: block;
+    width: 80%;
+    padding: 10px;
+  }
+  .container_general .profileBox p {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    width: 100%;
+  }
   .container_works {
     margin: 20px 10px;
   }
